@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const products = ["Apel","Anggur","Jeruk"]
+        const prices = [35000,40000,15000]
+        const stocks = [100,50,15]
+        let printProducts = ""
+        for (let i = 0; i < products.length; i++) {
+            printProducts += `${products[i]} (${prices[i]}/Kg) - Stock: ${stocks[i]}\n`
+        }
+
+        alert(printProducts)
+    </script>
+</body>
+</html>

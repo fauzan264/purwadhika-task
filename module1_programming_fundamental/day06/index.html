@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Product{
+            constructor(name, price, stock, unit, category) {
+                this.name = name
+                this.price = price
+                this.stock = stock
+                this.unit = unit
+                this.category = category
+            }
+        }
+
+        let products = [
+            new Product("Apel", 37000, 55, "Kg", "Buah"),
+            new Product("Anggur", 41500, 25, "Kg", "Buah"),
+            new Product("Sawi", 2350, 100, "Pcs", "Buah"),
+        ]
+        console.log(products)
+
+        let input = prompt("Find Our Product!\nInput Product Name:")
+        let result = products.find((val) =>  val.name.toLowerCase() === input.toLowerCase());
+        alert(`
+        Name: ${result.name}\n
+        Price: ${result.price}\n
+        Stock: ${result.stock}\n
+        Unit: ${result.unit}\n
+        Category: ${result.category}
+        `)
+
+    </script>
+</body>
+</html>

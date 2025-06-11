@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <!-- spesifik div yang ada di container-01 -->
+    <style>
+        #container-01 > div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #container-01 > div:nth-child(even) {
+            background-color: brown;
+        }
+
+        #container-01 > div:nth-child(odd) {
+            background-color: burlywood;
+        }
+
+        #container-01 > #box-02 {
+            position: relative;
+            top: 50px;
+        }
+
+        #container-02 {
+            margin-top: 100px;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        #container-02 > div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #container-02 > div:nth-child(even) {
+            background-color: blueviolet;
+        }
+
+        #container-02 > div:nth-child(odd) {
+            background-color: yellow;
+        }
+
+        #container-02 > #box-02 {
+            position: absolute;
+            top: 0px;
+        }
+
+        #container-03 {
+            width: 100%;
+            height: 40px;
+            background-color: aquamarine;
+            position: fixed;
+            top: 0px;
+        }
+
+        #container-04 {
+            width: 100%;
+            height: 40px;
+            background-color: yellow;
+            position: sticky;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        RELATIVE
+        - Position yang relatif terhadap posisi semula
+        - ketika elemen relatif berpindah dari posisi semula, akan meninggalkan celah celah
+        - Bisa menggunakan property top, right, bottom, left
+    -->
+    <div id="container-01">
+        <div>Box-01</div>
+        <div id="box-02">Box-02</div>
+        <div>Box-03</div>
+    </div>
+
+    <!-- 
+        ABSOLUTE
+        - Diposisikan relatif terlahadp element parentnya yang memiliki position non static
+        - Jika tidak ada element parent yang memiliki position non-static, maka by default dia akan relative terhadap body
+        - Ketika elemen absolute bergeser, maka tidak akan meninggalkan celah
+        - 2 akan otomatis ke atas, sehingga, box 3 nya bergeser ke kiri menempati box 2
+    -->
+    <div id="container-02">
+        <div>Box-01</div>
+        <div id="box-02">Box-02</div>
+        <div>Box-03</div>
+    </div>
+    <!-- 
+        FIXED
+        - Diposisikan relatif terhadap body/viewport
+        - Takan statis bergeser meskipun halaman sedang di scroll
+        - Navbar/Sidebar/Footer
+    -->
+    <div id="container-03"></div>
+
+    <!-- 
+        STICKY
+        - posisinya relatif terhadap scroll user
+        - mirip sama relatif
+        - sering digunakan untuk navbar
+    -->
+    <div id="container-04"></div>
+
+
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+</body>
+</html>

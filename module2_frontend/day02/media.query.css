@@ -1,0 +1,23 @@
+/* 
+    min-width
+    terkecil-terbesar
+    approach: mobile first
+*/
+/* 0px - 480px */
+h1 {
+    color: green;
+}
+
+/* 480px - 768px */
+@media (min-width: 481px) {
+    h1 {
+        color: blue;
+    }
+}
+
+/* 769px - tak terhingga */
+@media (min-width: 769px) {
+    h1 {
+        color: yellow;
+    }
+}

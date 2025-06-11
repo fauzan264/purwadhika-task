@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grid {
+            margin-bottom: 2em;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        #grid > div {
+            padding: 50px;
+            border: 1px solid black;
+        }
+
+        #grid > div:nth-child(1) {
+            grid-row: 1/4
+        }
+
+        #grid > div:nth-child(2) {
+            grid-column: 2/4
+        }
+
+        #grid > div:nth-child(6) {
+            grid-column: 4/4; grid-row: 2/4
+        }
+
+        #flexbox {
+            display: flex;
+            gap: 10px
+        }
+
+        #flexbox .column1 > div {
+            width: 361.5px;
+            height: 326px;
+        }
+
+        #flexbox .column2 {
+            display:flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 733px;
+        }
+
+        #flexbox .column2 .row1 {
+            width: 733px;
+            height: 102px;
+        }
+
+        #flexbox .column2 .row2 > div,
+        #flexbox .column3 > div:nth-child(1)
+        {
+            width: 361.5px;
+            height: 102px;
+        }
+
+        #flexbox .column3 > div:nth-child(2)
+        {
+            width: 361.5px;
+            height: 214px;
+        }
+
+        #flexbox .column2 .row2,
+        #flexbox .column3
+        {
+            display:flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #grid > div:nth-child(1),
+        #grid > div:nth-child(2),
+        #grid > div:nth-child(6),
+        #flexbox .column1 > div,
+        #flexbox .column2 .row1,
+        #flexbox .column3 > div:nth-child(2)
+        {
+            background-color: green;
+        }
+
+        #grid > div:nth-child(3),
+        #grid > div:nth-child(5),
+        #grid > div:nth-child(7),
+        #flexbox .column2 .row2 > div:nth-child(2),
+        #flexbox .column2 .row2 > div:nth-child(3),
+        #flexbox .column3 > div:nth-child(1) 
+        {
+            background-color: red;
+        }
+
+        #grid > div:nth-child(4),
+        #grid > div:nth-child(8),
+        #flexbox .column2 .row2 > div:nth-child(1),
+        #flexbox .column2 .row2 > div:nth-child(4)
+        {
+            background-color: orange
+        }
+
+    </style>
+</head>
+<body>
+    <!-- menggunakan grid dan flexbox -->
+    <h1>GRID</h1>
+    <div id="grid"></div>
+
+    <h1>FLEXBOX</h1>
+    <div id="flexbox">
+        <!-- <div class="column1">
+            <div></div>
+        </div>
+        <div class="column2">
+            <div class="row1"></div>
+            <div class="row2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="column3">
+            <div></div>
+            <div></div>
+        </div> -->
+    </div>
+
+    <script>
+        // grid
+        let grid = document.querySelector("#grid");
+
+        for (let i = 0; i < 8; i++) {
+            const newDivGrid = document.createElement("div");
+
+            grid.appendChild(newDivGrid)
+        }
+
+        // flexbox
+        let flex = document.querySelector("#flexbox")
+        const columnFlex = [
+            {
+                "class": "column1",
+                "row": [
+                    {"class": "", "column": 1},
+                ]
+            },
+            {
+                "class": "column2",
+                "row": [
+                    {"class": "row1", "column": 0},
+                    {"class": "row2", "column": 4},
+                ]
+            },
+            {
+                "class": "column3",
+                "row": [
+                    {"class": "", "column": 0},
+                    {"class": "", "column": 0},
+                ]
+            },
+        ]
+
+        // create column
+        for (let i = 0; i < columnFlex.length; i++) {
+            const newDivColumnFlex = document.createElement("div");
+            newDivColumnFlex.classList.add(columnFlex[i].class)
+            const flexColumnData = flex.appendChild(newDivColumnFlex)
+
+            // create column row
+            for(let j = 0; j < columnFlex[i].row.length; j++) {
+                const newDivColumnRowFlex = document.createElement("div");
+
+                if (columnFlex[i].row[j].class) {
+                    newDivColumnRowFlex.classList.add(columnFlex[i].row[j].class)
+                }
+
+                const flexColumnRowData = flexColumnData.appendChild(newDivColumnRowFlex)
+
+                // create column row column
+                for(let k = 0; k < columnFlex[i].row[j].column; k++) {
+                    const newDivColumnRowColFlex = document.createElement("div");
+                    flexColumnRowData.appendChild(newDivColumnRowColFlex)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

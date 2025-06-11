@@ -1,0 +1,15 @@
+#container-01 {
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center; /* akan menjadi ke tengah. sumbu x */
+    align-items: center; /* akan menjadi ke tengah. sumbu y */
+    flex-wrap: wrap;
+    justify-content: space-between; /* akan mempunyai jarak dengan pembagian yang sama */
+}
+
+#container-01 > div {
+    width: 300px;
+}
+
+

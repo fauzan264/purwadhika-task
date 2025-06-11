@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grid.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        GRID
+        1. memiliki container
+        2. display: grid; grid-template-columns; grid-template-rows; gap;
+    -->
+    <!-- akan mendapatkan porsi yang sama, berdasarkan yang telah kita define -->
+    <!-- kolomnya tetap sama, barisnya akan terus bertambah -->
+    <!-- fungsinya untuk card -->
+    <div id="container-01">
+        <div style="background-color: aquamarine;">01</div>
+        <div style="background-color: blue;">02</div>
+        <div style="background-color: yellow;">03</div>
+        <div style="background-color: orange;">04</div>
+        <div style="background-color: green;">05</div>
+    </div>
+    <br />
+
+    <div id="container-02">
+        <!-- kalo grid itu total kolomnya 9 -->
+        <!-- dia akan mengambil kolom 1 sampai 3 -->
+        <!-- 1/4 itu 1 sampai 3 aja -->
+        <div style="background-color: aquamarine; grid-column: 1/4;">01</div>
+        <!-- 4/10 itu 4 sampai 9 -->
+        <div style="background-color: brown; grid-column: 4/10;">02</div>
+        <div style="background-color: aquamarine;">03</div>
+        <div style="background-color: aquamarine;">04</div>
+        <div style="background-color: aquamarine;">05</div>
+        <div style="background-color: aquamarine;">06</div>
+        <div style="background-color: aquamarine;">07</div>
+        <div style="background-color: aquamarine;">08</div>
+        <div style="background-color: aquamarine;">09</div>
+    </div>
+
+    <!-- grid gap, untuk membuat jarak antar elemennya -->
+</body>
+</html>

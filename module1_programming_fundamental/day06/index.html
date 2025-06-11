@@ -15,6 +15,10 @@
                 this.unit = unit
                 this.category = category
             }
+
+            static getProduct(products, searchProduct) {
+                return products.find((product) =>  product.name.toLowerCase() === searchProduct.toLowerCase())
+            }
         }
 
         let products = [
@@ -22,17 +26,28 @@
             new Product("Anggur", 41500, 25, "Kg", "Buah"),
             new Product("Sawi", 2350, 100, "Pcs", "Buah"),
         ]
-        console.log(products)
+        /** console.log(products) */
 
-        let input = prompt("Find Our Product!\nInput Product Name:")
-        let result = products.find((val) =>  val.name.toLowerCase() === input.toLowerCase());
-        alert(`
-        Name: ${result.name}\n
-        Price: ${result.price}\n
-        Stock: ${result.stock}\n
-        Unit: ${result.unit}\n
-        Category: ${result.category}
-        `)
+        while(true) {
+            let input = prompt("Find Our Product!\nInput Product Name:")
+            /** let result = products.find((val) =>  val.name.toLowerCase() === input.toLowerCase()); */
+
+            if (input === null) alert("Thank you")
+
+            let result = Product.getProduct(products, input)
+
+            if (result) {
+                alert(`
+                    Name: ${result.name}\n
+                    Price: ${result.price}\n
+                    Stock: ${result.stock}\n
+                    Unit: ${result.unit}\n
+                    Category: ${result.category}
+                `)
+            } else {
+                alert(`Product ${input} Not Found! Find Another Product`)
+            }
+        }
 
     </script>
 </body>

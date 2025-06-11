@@ -1,0 +1,166 @@
+<!-- penjelasan mengenai type html -->
+<!DOCTYPE html>
+<!-- file ini mostly dibuat dengan bahasa inggris atau en -->
+<html lang="en">
+<!-- tag head untuk informasi halaman yang kita punya -->
+<head>
+    <!-- tag html ini ditulis dengan character set UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- viewport konten mengikuti device, skala normal -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title di sini yang akan muncul di tab browser kita -->
+    <title>Intro HTML</title>
+    <style>
+        table tr, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<!-- tag body yang digunakan untuk menampung kerangka yang akan kita buat -->
+<!-- tag head dan body adalah kerangka yang utama -->
+<body>
+    <!-- ada tag yang berpasangan dan ada yang berdiri sendiri contoh DOCTYPE, meta -->
+    <!-- antara tag dan ketemu close tag, konten itu adalah elemen dan satu kesatuan -->
+    
+    <!-- heading: untuk menuliskan judul -->
+    <!-- h1, h2, h3, h4, h5, h6  -->
+    <h1>Purwadhika</h1>
+    <h2>Purwadhika</h2>
+    <h3>Purwadhika</h3>
+    <h4>Purwadhika</h4>
+    <h5>Purwadhika</h5>
+    <h6>Purwadhika</h6>
+
+    <!-- paragraph: untuk menuliskan paragraf -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Unde enim a deserunt fugit aliquam, vel, error odit id quibusdam nemo autem magni esse, ipsam quo debitis praesentium corrupti? Enim, quas.</p>
+
+    <!-- break: untuk membuat baris baru atau enter -->
+    <!-- hr: membuat garis secara horizontal -->
+    <hr />
+
+    <!-- Text Formatting -->
+    <p>
+        <b>Purwadhika Digital School</b> <!-- tebal -->
+        <i>Purwadhika Digital School</i> <!-- garis miring -->
+        <u>Purwadhika Digital School</u> <!-- garis bawah -->
+        <mark>Purwadhika Digital School</mark> <!-- stabilo -->
+        <del>Purwadhika Digital School</del> <!-- coret -->
+        <sub>Purwadhika Digital School</sub> <!-- pangkat -->
+        <sup>Purwadhika Digital School</sup> <!-- pangkat -->
+    </p>
+
+    <!-- List -->
+    <ol>
+        <li>Liverpool</li>
+        <li>Arsenal</li>
+        <li>Manchester City</li>
+    </ol> <!-- ordered list -->
+
+    <ul>
+        <li>Japan</li>
+        <li>Australia</li>
+        <li>Arab</li>
+        <li>Indonesia</li>
+    </ul> <!-- unordered list -->
+
+    <!-- table -->
+    <!-- <table> -->
+        <!-- <tr>Table Row</tr> -->
+            <!-- <td>Table Data<td/> -->
+    <table>
+        <!-- colspan: untuk merge atau menggabungkan lebih dari 1 kolom -->
+        <!-- rowspan: untuk merge atau menggabungkan baris -->
+        <!-- mirip menggabungkan row di microsoft excel -->
+        <thead>
+            <tr>
+                <td>No.</td>
+                <td>Name</td>
+                <td>Campus</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Defryan</td>
+                <td>Purwadhika Bandung</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ansor</td>
+                <td>Purwadhika BSD</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td colspan="2" rowspan="2">Aboy</td>
+            </tr>
+            <tr>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Anchor tags -->
+    <!-- href, target itu atribut -->
+    <!-- _blank akan membuat di tab baru -->
+    <!-- absolute link: di akan ke link lain -->
+    <!-- relative link: di akan ke file lain -->
+    <a href="https://google.com" target="_blank">Link Jakpot</a>
+    <a href="./satu.html">Relative Link</a>
+
+    <!-- image tag -->
+    <!-- atribut src, bisa diambil dari internet atau lokal kita -->
+    <!-- atribut alt, fungsinya untuk memberikan keterangan apabila gambar tidak berhasil di load -->
+    <!-- bisa diatur width dan height -->
+    <img src="img/cat.png" alt="Gambar kucing" />
+
+    <!-- figure & caption tags -->
+    <!-- biasanya sering muncul di portal berita -->
+    <figure>
+        <img src="img/cat.png" alt="Gambar kucing" />
+        <!-- figcaption, fungsinya untuk keterangan tambahan di bawah gambar -->
+        <figcaption>
+            ini kucing ya
+        </figcaption>
+    </figure>
+
+    <!-- form -->
+    <form>
+        <!-- type input ada banyak: text, password, number, checkbox, date -->
+        <!-- bedanya dalam menampung input -->
+        <!-- kalo password apa yang kita input akan di hide -->
+        <!-- kalo number harus dalam bentuk angka -->
+        <!-- kalo date itu untuk menampilkan tanggal -->
+        <input type="text" placeholder="Input username" />
+        <input type="password" placeholder="Input password" />
+        <input type="number" />
+        <input type="date" />
+        <input type="checkbox" /> Ya
+        <input type="checkbox" /> Tidak
+        <input type="radio" /> Tidak Lulus
+        <input type="submit" value="Submit">
+        <button type="submit">Submit</button>
+        <!-- kalo button input, hanya terbatas teks dan number. sedangkan button biasa bisa nampilin gambar juga -->
+
+        <!-- kalo pake next js, bisa pakai react icon -->
+        <select name="" id="">
+            <option value="">Choose Province</option>
+            <option value="">Jawa Barat</option>
+            <option value="">Jawa Tengah</option>
+        </select>
+
+        <!-- satu kesatuan fieldset, legend, p, label -->
+        <!-- label dan input satu kesatuan -->
+        <fieldset>
+            <legend>Data Diri</legend>
+            <p>
+                <label for="">Username</label>
+                <input type="text">
+            </p>
+        </fieldset>
+
+        <!-- div: kayak tag kosong dan bebas diisikan apapun -->
+        <!-- bisa diisikan parent, container -->
+        <div>Hello</div>
+    </form>
+</body>
+</html>
